@@ -20,7 +20,7 @@ $('.curios img').hover(function() {
     var dataId = $(this).attr('data-id')
     var foundObj = findObjById(dataId, curios)
     this.src = foundObj.provsrc
-    var msg = foundObj.message
+    var msg = foundObj.name + ": " + foundObj.message
     var $msg = document.querySelectorAll('.msg')
     for (var i = 0; i < $msg.length; i++) {
       $msg[i].textContent = msg
@@ -64,342 +64,399 @@ $('input').click(function () {
 var curios = [
   {
     id: '1',
+    name: 'Crate',
     src: 'Images/Curios/All/crate.png',
     provsrc: 'Images/Provisions/no-action.png',
     message: 'Heirloom(75%), Nothing(25%)'
   },
   {
     id: '2',
+    name: 'Discarded Pack',
     src: 'Images/Curios/All/discarded-pack.png',
     provsrc: 'Images/Provisions/no-action.png',
     message: 'Supplies x1 + Gold/Gems x2 + Journal Entry(60%), Scouting(20%), Nothing(20%)'
   },
   {
     id: '3',
+    name: 'Eldritch Altar',
     src: 'Images/Curios/All/eldritch-altar.png',
     provsrc: 'Images/Provisions/holy-water.png',
     message: 'Purge Negative Quirk(100%)'
   },
   {
     id: '4',
+    name: 'Heirloom Chest',
     src: 'Images/Curios/All/heirloom-chest.png',
     provsrc: 'Images/Provisions/skeleton-key.png',
     message: 'Heirlooms x4(100%). Without cleansing: Heirlooms x2(75%), Bleed(12.5%), Blight(12.5%)'
   },
   {
     id: '5',
+    name: 'Locked Strongbox',
     src: 'Images/Curios/All/locked-strongbox.png',
     provsrc: 'Images/Provisions/shovel-key.png',
     message: 'Key: Any Loot x3(100%). Shovel: Any Loot x2(66.7%), Nothing(33.3%)'
   },
   {
     id: '6',
+    name: 'Sack',
     src: 'Images/Curios/All/sack.png',
     provsrc: 'Images/Provisions/no-action.png',
     message: 'Gold(75%), Nothing(25%)'
   },
   {
     id: '7',
+    name: 'Sconce',
     src: 'Images/Curios/All/sconce.png',
     provsrc: 'Images/Provisions/no-action.png',
     message: 'Torch x1(100%)'
   },
   {
     id: '8',
+    name: 'Shamblers Altar',
     src: 'Images/Curios/All/shamblers-altar.png',
     provsrc: 'Images/Provisions/no-action.png',
     message: 'Summon Shambler by using Torch (Warning: Be Prepared)'
   },
   {
     id: '9',
+    name: 'Stack of Books',
     src: 'Images/Curios/All/stack-of-books.png',
     provsrc: 'Images/Provisions/no-action.png',
     message: 'Stress +25(22.2%), Random Positive Quirk(22.2%), Journal Entry(16.7%), Nothing(16.7%), Random Negative Quirk(11.1%), Decrease Light 25(11.1%)'
   },
   {
     id: '10',
+    name: 'Locked Strongbox',
     src: 'Images/Curios/All/locked-strongbox.png',
     provsrc: 'Images/Provisions/no-action.png',
     message: 'Any Loot x2(75%), Blight(25%)'
   },
   {
     id: '11',
+    name: 'Alchemy Table',
     src: 'Images/Curios/Ruins/alchemy-table.png',
     provsrc: 'Images/Provisions/medicinal-herbs.png',
     message: 'Gold/Gems x2(100%)'
   },
   {
     id: '12',
+    name: 'Altar of Light',
     src: 'Images/Curios/Ruins/altar-of-light.png',
     provsrc: 'Images/Provisions/holy-water.png',
     message: 'Buff DMG +30% Until Camp(100%). Without cleansing: Buff DMG +20% Until Camp(100%)'
   },
   {
     id: '13',
+    name: 'Bookshelf',
     src: 'Images/Curios/Ruins/bookshelf.png',
     provsrc: 'Images/Provisions/no-action.png',
     message: 'Scouting(20%), Stress +15(20%), Journal Entry(20%), Nothing(20%), Positive Quirk(13.3%), Negative Quirk(6.7%)'
   },
   {
     id: '14',
+    name: 'Confession Booth',
     src: 'Images/Curios/Ruins/confession-booth.png',
     provsrc: 'Images/Provisions/holy-water.png',
     message: 'Stress Heal 30(100%). With no provision: Stress +15(50%), Gold/Trinket x6(25%), Purge Negative Quirk(25%)'
   },
   {
     id: '15',
+    name: 'Decorative Urn',
     src: 'Images/Curios/Ruins/decorative-urn.png',
     provsrc: 'Images/Provisions/holy-water.png',
     message: 'Gold/Trinket x2 + Gems x2(100%)'
   },
   {
     id: '16',
+    name: 'Holy Fountain',
     src: 'Images/Curios/Ruins/holy-fountain.png',
     provsrc: 'Images/Provisions/holy-water.png',
     message: 'Stress Heal 20, Cure Status Effects, Heal 12 HP(100%). Without cleansing: Stress Heal 10 + Cure Status Effects + Heal 5HP(50%), Gold/Gems x2(50%)'
   },
   {
     id: '17',
+    name: 'Iron Maiden',
     src: 'Images/Curios/Ruins/iron-maiden.png',
     provsrc: 'Images/Provisions/medicinal-herbs.png',
     message: 'Any Loot x2(100%)'
   },
   {
     id: '18',
+    name: 'Locked Display Cabinet',
     src: 'Images/Curios/Ruins/locked-display-cabinet.png',
     provsrc: 'Images/Provisions/shovel-key.png',
     message: 'Key: Gold/Heirlooms x3 + Gold/Gems x2(100%). Shovel: Gold/Heirlooms x2 + Gold/Gems x2(100%)'
   },
   {
     id: '19',
+    name: 'Locked Sarcophagus',
     src: 'Images/Curios/Ruins/locked-sarcophagus.png',
     provsrc: 'Images/Provisions/shovel-key.png',
     message: 'Key: Gold/Heirlooms x2 + Gold/Gems x1(100%). Shovel: Gold/Heirlooms x1 + Gold/Gems x1(100%)'
   },
   {
     id: '20',
+    name: 'Sarcophagus',
     src: 'Images/Curios/Ruins/sarcophagus.png',
     provsrc: 'Images/Provisions/no-action.png',
     message: 'Gold/Heirlooms x2(60%), Negative Quirk: Thanatophobia(20%), Nothing(20%)'
   },
   {
     id: '21',
+    name: 'Suit of Armor',
     src: 'Images/Curios/Ruins/suit-of-armor.png',
     provsrc: 'Images/Provisions/no-action.png',
     message: 'Buff PROT/DODGE +10 Until Camp(75%), Positive Quirk: Ruins Adventurer(12.5%), Positive Quirk: Ruins Tactician(12.5%)'
   },
   {
     id: '22',
+    name: 'Bone Altar',
     src: 'Images/Curios/Warrens/bone-altar.png',
     provsrc: 'Images/Provisions/no-action.png',
     message: 'Buff +15% DMG, +10 ACC, +5% CRT Until Camp, Cure Status Effects(100%)'
   },
   {
     id: '23',
+    name: 'Dinner Cart',
     src: 'Images/Curios/Warrens/dinner-cart.png',
     provsrc: 'Images/Provisions/medicinal-herbs.png',
     message: 'Food x3 + Gold/Trinket x1(100%)'
   },
   {
     id: '24',
+    name: 'Makeshift Dining Table',
     src: 'Images/Curios/Warrens/makeshift-dining-table.png',
     provsrc: 'Images/Provisions/medicinal-herbs.png',
     message: 'Food x2 + Gold/Supplies x1(100%)'
   },
   {
     id: '25',
+    name: 'Moonshine Barrel',
     src: 'Images/Curios/Warrens/moonshine-barrel.png',
     provsrc: 'Images/Provisions/medicinal-herbs.png',
     message: 'Buff +30% DMG until camp(100%)'
   },
   {
     id: '26',
+    name: 'Occult Scrawlings',
     src: 'Images/Curios/Warrens/occult-scrawlings.png',
     provsrc: 'Images/Provisions/no-action.png',
     message: 'Random Positive Quirk(33.3%), Stress +25(25%), Nothing(25%), Random Negative Quirk(16.7%)'
   },
   {
     id: '27',
+    name: 'Pile of Bones',
     src: 'Images/Curios/Warrens/pile-of-bones.png',
     provsrc: 'Images/Provisions/holy-water.png',
     message: 'Any Loot x2(100%)'
   },
   {
     id: '28',
+    name: 'Pile of Scrolls',
     src: 'Images/Curios/Warrens/pile-of-scrolls.png',
     provsrc: 'Images/Provisions/torch.png',
     message: 'Purge Negative Quirk(100%)'
   },
   {
     id: '29',
+    name: 'Rack of Blades',
     src: 'Images/Curios/Warrens/rack-of-blades.png',
     provsrc: 'Images/Provisions/bandage.png',
     message: 'Gold/Gems x2 + Food x1(100%)'
   },
   {
     id: '30',
+    name: 'Sacrificial Stone',
     src: 'Images/Curios/Warrens/sacrificial-stone.png',
     provsrc: 'Images/Provisions/no-action.png',
     message: 'Stress +50(50%), Purge Negative Quirk(25%), Positive Quirk: Warrens Explorer(12.5%), Postive Quirk: Warrens Scrounger(12.5%)'
   },
   {
     id: '31',
+    name: 'Ancient Coffin',
     src: 'Images/Curios/Weald/ancient-coffin.png',
     provsrc: 'Images/Provisions/no-action.png',
     message: 'Gold/Heirlooms x2(50%), Nothing(33.3%), Positive Quirk: Weald Adventurer(8.3%), Positive Quirk: Weald Explorer(8.3%)'
   },
   {
     id: '32',
+    name: 'Beast Carcass',
     src: 'Images/Curios/Weald/beast-carcass.png',
     provsrc: 'Images/Provisions/medicinal-herbs.png',
     message: 'Food x2(100%)'
   },
   {
     id: '33',
+    name: 'Eerie Spiderweb',
     src: 'Images/Curios/Weald/eerie-spiderweb.png',
     provsrc: 'Images/Provisions/bandage.png',
     message: 'Gold/Gems x2 + Gems/Trinket x1(100%)'
   },
   {
     id: '34',
+    name: 'Left Luggage',
     src: 'Images/Curios/Weald/left-luggage.png',
     provsrc: 'Images/Provisions/antivenom-key.png',
     message: 'Any Loot x3(100%). Without cleansing: Any Loot x4 + Jouranl Entry(50%), Blight(50%)'
   },
   {
     id: '35',
+    name: 'Mummified Remains',
     src: 'Images/Curios/Weald/mummified-remains.png',
     provsrc: 'Images/Provisions/bandage.png',
     message: 'Gold/Trinkets x2(100%)'
   },
   {
     id: '36',
+    name: 'Old Tree',
     src: 'Images/Curios/Weald/old-tree.png',
     provsrc: 'Images/Provisions/antivenom.png',
     message: 'Any Loot x3(100%). Without cleansing: Any Loot x2(50%), Blight/Nothing(25%)'
   },
   {
     id: '37',
+    name: 'Pristine Fountain',
     src: 'Images/Curios/Weald/pristine-fountain.png',
     provsrc: 'Images/Provisions/holy-water.png',
     message: 'Stress Heal 30(100%). Without cleansing: Stress Heal 20(100%)'
   },
   {
     id: '38',
+    name: 'Shallow Grave',
     src: 'Images/Curios/Weald/shallow-grave.png',
     provsrc: 'Images/Provisions/shovel.png',
     message: 'Gems/Heirlooms x3(100%)'
   },
   {
     id: '39',
+    name: 'Travellers Tent',
     src: 'Images/Curios/Weald/travellers-tent.png',
     provsrc: 'Images/Provisions/no-action.png',
     message: 'Scouting(37.5%), Gold/Supplies x4 + Gold/Heirlooms x4 + Journal Entry(37.5%), Stress +25(12.5%), Nothing(12.5%)'
   },
   {
     id: '40',
+    name: 'Troubling Effigy',
     src: 'Images/Curios/Weald/troubling-effigy.png',
     provsrc: 'Images/Provisions/holy-water.png',
     message: 'Random Positive Quirk(100%)'
   },
   {
     id: '41',
+    name: 'Barnacle Crusted Chest',
     src: 'Images/Curios/Cove/barnacle-crusted-chest.png',
     provsrc: 'Images/Provisions/shovel.png',
     message: 'Any Loot x3(100%). Without cleansing: Any Loot x2(50%), Bleed(25%), Nothing(25%)'
   },
   {
     id: '42',
+    name: 'Bas Relief',
     src: 'Images/Curios/Cove/bas-relief.png',
     provsrc: 'Images/Provisions/no-action.png',
     message: 'Positive Quirk(66.7%), Negative Quirk(22.2%), Disease(11.1%)'
   },
   {
     id: '43',
+    name: 'Brackish Tidepool',
     src: 'Images/Curios/Cove/brackish-tidepool.png',
     provsrc: 'Images/Provisions/antivenom.png',
     message: 'Heal 5 HP and Cure(50%), Stress Heal 5(50%)'
   },
   {
     id: '44',
+    name: 'Eerie Coral',
     src: 'Images/Curios/Cove/eerie-coral.png',
     provsrc: 'Images/Provisions/medicinal-herbs.png',
     message: 'Purge Negative Quirk(100%)'
   },
   {
     id: '45',
+    name: 'Fish Idol',
     src: 'Images/Curios/Cove/fish-idol.png',
     provsrc: 'Images/Provisions/holy-water.png',
     message: 'Buff +18% DMG until Camp(50%), Buff 10% DMG, 5 ACC until Camp(50%)'
   },
   {
     id: '46',
+    name: 'Giant Fish Carcass',
     src: 'Images/Curios/Cove/giant-fish-carcass.png',
     provsrc: 'Images/Provisions/medicinal-herbs.png',
     message: 'Gems/Trinkets x2 + Gem/Gold x1 + Supplies x2(100%)'
   },
   {
     id: '47',
+    name: 'Giant Oyster',
     src: 'Images/Curios/Cove/giant-oyster.png',
     provsrc: 'Images/Provisions/shovel.png',
     message: 'Gold/Trinkets x3(100%)'
   },
   {
     id: '48',
+    name: 'Ships Figurehead',
     src: 'Images/Curios/Cove/ships-figurehead.png',
     provsrc: 'Images/Provisions/no-action.png',
     message: 'Stress Heal 25(66.7%), Buff +20% DMG, +4 SPD Until Camp(33.3%)'
   },
   {
     id: '49',
+    name: 'Bloodflowers',
     src: 'Images/Curios/Courtyard/bloodflowers.jpg',
     provsrc: 'Images/Provisions/shovel.png',
     message: 'Gems/Heirlooms x2(66.7%), Any Loot x1(33.3%)'
   },
   {
     id: '50',
+    name: 'Damned Fountain',
     src: 'Images/Curios/Courtyard/damned-fountain.jpg',
     provsrc: 'Images/Provisions/holy-water.png',
     message: 'Stress Heal 30(100%)'
   },
   {
     id: '51',
+    name: 'Distrubing Diversion',
     src: 'Images/Curios/Courtyard/disturbing-diversion.jpg',
     provsrc: 'Images/Provisions/shovel.png',
     message: 'Heirlooms x3(100%)'
   },
   {
     id: '52',
+    name: 'Forgotten Delicacies',
     src: 'Images/Curios/Courtyard/forgotten-delicacies.jpg',
     provsrc: 'Images/Provisions/medicinal-herbs.png',
     message: 'Food x2 + Gold/Supplies x1(100%)'
   },
   {
     id: '53',
+    name: 'Hooded Shrew',
     src: 'Images/Curios/Courtyard/hooded-shrew.png',
     provsrc: 'Images/Provisions/the-blood.png',
     message: 'Any Loot x2(100%)'
   },
   {
     id: '54',
+    name: 'Pile of Strange Bones',
     src: 'Images/Curios/Courtyard/pile-of-strange-bones.jpg',
     provsrc: 'Images/Provisions/bandage.png',
     message: 'Any Loot x1(50%), The Blood(50%)'
   },
   {
     id: '55',
+    name: 'Throbbing Coccoons',
     src: 'Images/Curios/Courtyard/throbbing-coccoons.jpg',
     provsrc: 'Images/Provisions/torch.png',
     message: 'Stress Heal 30(100%)'
   },
   {
     id: '56',
+    name: 'Thronging Hive',
     src: 'Images/Curios/Courtyard/thronging-hive.jpg',
     provsrc: 'Images/Provisions/torch.png',
     message: 'Any Loot x3(100%). Without cleansing: Any Loot x2(75%), Bleed(25%)'
   },
   {
     id: '57',
+    name: 'Wine Crate',
     src: 'Images/Curios/Courtyard/wine-crate.jpg',
     provsrc: 'Images/Provisions/antivenom-shovel.png',
     message: 'Antivenom: Stress Heal 30(100%). Shovel: Firewood(100%)'
